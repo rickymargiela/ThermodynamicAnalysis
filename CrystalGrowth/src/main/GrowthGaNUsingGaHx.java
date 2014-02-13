@@ -9,16 +9,16 @@ import java.io.PrintStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class GrowthGaNUsingGaHx {
+public class GrowthGaNUsingGaHx {// \t
 	public static void main(String[] args) {
 		final String calcName = "GaNUsingGaHx";
 		final String saveDirectory = "/Users/Yu/Documents/calcResult/";
-		final String fileFormat = ".txt";
+		final String fileFormat = ".csv";
 		int convdCounter;
 		boolean isConvd;
 
 		final VariableType varType = VariableType.linearScale;
-		final VariableParam varParam = VariableParam.growthTemperature;
+		final VariableParam varParam = VariableParam.sourceTemperature;
 		final double varRange1 = 1000.0;
 		final double varRange2 = 1200.0;
 		final int stepNumber = 200;
@@ -43,52 +43,53 @@ public class GrowthGaNUsingGaHx {
 			System.out
 					.println("********************************** CALCULATION RESULT **********************************");
 
-			System.out.println("Calc.Date:\t"
+			System.out.println(",Calc.Date:,"
 					+ sdf.format(new Date(timeMillisEnd)));
 
 			System.out
-					.println("\t--------------- INPUT PARAMETER ---------------");
+					.println(",--------------- INPUT PARAMETER ---------------");
 
-			System.out.println("\tPall = \t" + initialParam.getPall());
+			System.out.println(",Pall = ," + initialParam.getPall());
 
-			System.out.println("\tsourceP0III = \t" + initialParam.getP0III());
+			System.out.println(",sourceP0III = ," + initialParam.getP0III());
 
-			System.out.println("\tgrowthP0III= \t" + initialParam.getP0III());
+			System.out.println(",growthP0III= ," + initialParam.getP0III());
 
-			System.out.println("\tsourceF0 = \t" + initialParam.getF0());
+			System.out.println(",sourceF0 = ," + initialParam.getF0());
 
-			System.out.println("\tgrowthF0 = \t" + initialParam.getF0());
+			System.out.println(",growthF0 = ," + initialParam.getF0());
 
-			System.out.println("\tVIII = \t" + initialParam.getVIII());
+			System.out.println(",VIII = ," + initialParam.getVIII());
 
-			System.out.println("\talpha = \t" + initialParam.getAlpha());
+			System.out.println(",alpha = ," + initialParam.getAlpha());
 
-			System.out.println("\tbeta = \t" + initialParam.getBeta());
+			System.out.println(",beta = ," + initialParam.getBeta());
 
 			System.out
-					.println("\t-----------------------------------------------");
+					.println(",-----------------------------------------------");
+			System.out.println();
 
-			System.out.println("\t[SOURCE ZONE]\t\t\t\t\t\t\t[GROWTH ZONE]");
+			System.out.println("[VARIABLE],[SOURCE ZONE],,,,,,,[GROWTH ZONE]");
 
-			System.out.print(varParam.toString() + "\t");
-			System.out.print("pGa\t");
-			System.out.print("pGaH\t");
-			System.out.print("pGaH2\t");
-			System.out.print("pGaH3\t");
-			System.out.print("pH2\t");
-			System.out.print("pH\t");
-			System.out.print("pIG\t");
-			System.out.print("pGa\t");
-			System.out.print("pGaH\t");
-			System.out.print("pGaH2\t");
-			System.out.print("pGaH3\t");
-			System.out.print("pH\t");
-			System.out.print("pH2\t");
-			System.out.print("pNH2\t");
-			System.out.print("pNH3\t");
-			System.out.print("pIG\t");
-			System.out.print("dPIII\t");
-			System.out.print("dPIII/dP0III\t");
+			System.out.print(varParam.toString() + ",");
+			System.out.print("pGa,");
+			System.out.print("pGaH,");
+			System.out.print("pGaH2,");
+			System.out.print("pGaH3,");
+			System.out.print("pH2,");
+			System.out.print("pH,");
+			System.out.print("pIG,");
+			System.out.print("pGa,");
+			System.out.print("pGaH,");
+			System.out.print("pGaH2,");
+			System.out.print("pGaH3,");
+			System.out.print("pH,");
+			System.out.print("pH2,");
+			System.out.print("pNH2,");
+			System.out.print("pNH3,");
+			System.out.print("pIG,");
+			System.out.print("dPIII,");
+			System.out.print("dPIII/dP0III,");
 			System.out.println();
 
 			for (xLoopIndex = 0; xLoopIndex < stepNumber; xLoopIndex++) {
@@ -151,9 +152,9 @@ public class GrowthGaNUsingGaHx {
 					}
 				} while (isConvd);
 
-				System.out.print(varValue + "\t");
+				System.out.print(varValue + ",");
 				for (int i = 0; i < initialParam.getSourceEquationNumber(); i++) {
-					System.out.print(sourceP[i] + "\t");
+					System.out.print(sourceP[i] + ",");
 				}
 				initialParam.setSourceP(sourceP);
 
@@ -175,7 +176,7 @@ public class GrowthGaNUsingGaHx {
 				} while (isConvd);
 
 				for (int i = 0; i < initialParam.getGrowthEquationNumber(); i++) {
-					System.out.print(growthP[i] + "\t");
+					System.out.print(growthP[i] + ",");
 				}
 				System.out.println();
 
