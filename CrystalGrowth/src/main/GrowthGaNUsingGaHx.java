@@ -18,9 +18,9 @@ public class GrowthGaNUsingGaHx {
 		boolean isConvd;
 
 		final VariableType varType = VariableType.linearScale;
-		final VariableParam varParam = VariableParam.sourceTemperature;
-		final double varRange1 = 500.0;
-		final double varRange2 = 1000.0;
+		final VariableParam varParam = VariableParam.growthTemperature;
+		final double varRange1 = 1000.0;
+		final double varRange2 = 1200.0;
 		final int stepNumber = 200;
 
 		int xLoopIndex;
@@ -68,7 +68,7 @@ public class GrowthGaNUsingGaHx {
 			System.out
 					.println("\t-----------------------------------------------");
 
-			System.out.println("[SOURCE ZONE]\t\t\t\t\t\t\t\t[GROWTH ZONE]");
+			System.out.println("\t[SOURCE ZONE]\t\t\t\t\t\t\t[GROWTH ZONE]");
 
 			System.out.print(varParam.toString() + "\t");
 			System.out.print("pGa\t");
