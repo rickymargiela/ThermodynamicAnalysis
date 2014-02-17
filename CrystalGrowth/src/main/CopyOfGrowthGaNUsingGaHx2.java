@@ -15,15 +15,14 @@ public class CopyOfGrowthGaNUsingGaHx2 {
 			IOException {
 		final String calcName = "TestGaNUsingGaHx";
 		final String saveDirectory = "/Users/Yu/Documents/calcResult/";
-		final String fileFormat = ".csv";
+		final String fileFormat = ".txt";
 		int convdCounter;
 		boolean isConvd;
-		// String strTemp;
 
 		final VariableType varType = VariableType.linearScale;
-		final VariableParam varParam = VariableParam.growthTemperature;
+		final VariableParam varParam = VariableParam.sourceTemperature;
 		final double varRange1 = 1000.0;
-		final double varRange2 = 1200.0;
+		final double varRange2 = 1500.0;
 		final int stepNumber = 200;
 
 		int xLoopIndex;
@@ -159,6 +158,7 @@ public class CopyOfGrowthGaNUsingGaHx2 {
 				for (int i = 0; i < initialParam.getSourceEquationNumber(); i++) {
 					System.out.print(sourceP[i] + ",");
 				}
+				System.out.println("sourceZone complete");
 				initialParam.setSourceP(sourceP);
 
 				do {
@@ -166,7 +166,10 @@ public class CopyOfGrowthGaNUsingGaHx2 {
 					isConvd = true;
 
 					growthP = growthZone.pGrowthZone();
-
+					// for (int i = 0; i <
+					// initialParam.getGrowthEquationNumber(); i++) {
+					// System.out.println("growthP" + i + "= " + growthP[i]);
+					// }
 					for (int i = 0; i < initialParam.getGrowthEquationNumber(); i++) {
 						if (!Double.isNaN(growthP[i])
 								&& !Double.isInfinite(growthP[i])) {

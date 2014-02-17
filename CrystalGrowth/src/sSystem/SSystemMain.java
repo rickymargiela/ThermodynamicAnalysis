@@ -38,6 +38,9 @@ public class SSystemMain {
 		do {
 			this.b = sSystemCalc.calculateB(paramSelector.setParam(this.p),
 					this.p, equationNumber);
+			for (int i = 0; i < equationNumber; i++) {
+				System.out.println("b" + i + "= " + b[i]);
+			}
 
 			if (convTest.checkConvergence(this.p, this.b, equationNumber)) {
 				flag++;
@@ -47,7 +50,7 @@ public class SSystemMain {
 				this.p[i] = Math.exp(this.b[i]);
 			}
 
-		} while (flag < 2);
+		} while (flag < 3);
 		return this.p;
 	}
 }

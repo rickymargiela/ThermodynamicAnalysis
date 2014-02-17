@@ -15,7 +15,7 @@ public class GrowthParam implements IZoneParam {
 
 	InitialParam		initialParam	= new InitialParam();
 	GrowthMixingParam	growthMixing;
-	GrowthKFittingParam	kFittingParam;
+	GrowthKFittingParam	kFittingParam	= new GrowthKFittingParam();
 
 	@Override
 	public double[][] getDvm() {
@@ -50,7 +50,6 @@ public class GrowthParam implements IZoneParam {
 		equationNumber = initialParam.getGrowthEquationNumber();
 		kNumber = initialParam.getGrowthKNumber();
 		growthMixing = new GrowthMixingParam(initialParam.getSourceP());
-		kFittingParam = new GrowthKFittingParam();
 		p0 = growthMixing.getP0();
 
 		k = new double[kNumber];
@@ -123,8 +122,6 @@ public class GrowthParam implements IZoneParam {
 				{ 0.0, 0.0, 0.0, 0.0, 0.0, 3 * Math.pow(p[5], 2.0), 0.0, 0.0,
 						0.0 }, { 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 },
 				{ 0.0, 0.0, 0.0, 0.0, p[6], 0.0, p[4], 0.0, 0.0 } });
-
-		// for debug
 
 		return this;
 	}

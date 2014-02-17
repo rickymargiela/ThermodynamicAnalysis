@@ -2,44 +2,22 @@ package growthGaNUsingGaHx.paramSetter;
 
 public class InitialParam {
 
-	private final int		sourceEquationNumber;
-	private final int		growthEquationNumber;
-	private final int		sourceKNumber;
-	private final int		growthKNumber;
-	private final int		sourceP0Number;
-	private final int		growthP0Number;
-	private double			pAll;
-	private double			f0;
-	private double			p0III;
-	private double			VIII;
-	private double			sourceTemperature;
-	private double			growthTemperature;
-	private double			alpha;
-	private double			beta;
+	private final int		sourceEquationNumber	= 7;
+	private final int		growthEquationNumber	= 9;
+	private final int		sourceKNumber			= 5;
+	private final int		growthKNumber			= 6;
+	private final int		sourceP0Number			= 4;
+	private final int		growthP0Number			= 8;
+	private static double	pAll					= 1.0;
+	private static double	f0						= 0.5;
+	private static double	p0III					= 1e-5;
+	private static double	VIII					= 100.0;
+	private static double	sourceTemperature		= 1000.0;
+	private static double	growthTemperature		= 1500.0;
+	private static double	alpha					= 0.02;
+	private static double	beta					= 0.80;
 
 	private static double	sourceP[];
-
-	public InitialParam() {
-		sourceEquationNumber = 7;
-		growthEquationNumber = 9;
-
-		sourceKNumber = 5;
-		growthKNumber = 6;
-
-		sourceP0Number = 4;
-		growthP0Number = 8;
-
-		pAll = 1.0;
-		f0 = 0.5;
-		p0III = 1e-5;
-		VIII = 100.0;
-		sourceTemperature = 500.0;
-		growthTemperature = 1000.0;
-
-		alpha = 0.02;
-		beta = 0.80;
-
-	}
 
 	public double getAlpha() {
 		return alpha;
@@ -102,27 +80,27 @@ public class InitialParam {
 	}
 
 	public void setAlpha(double alpha) {
-		this.alpha = alpha;
+		InitialParam.alpha = alpha;
 	}
 
 	public void setBeta(double beta) {
-		this.beta = beta;
+		InitialParam.beta = beta;
 	}
 
 	public void setF0(double f0) {
-		this.f0 = f0;
+		InitialParam.f0 = f0;
 	}
 
 	public void setGrowthTemperature(double growthTemperature) {
-		this.growthTemperature = growthTemperature;
+		InitialParam.growthTemperature = growthTemperature;
 	}
 
 	public void setP0III(double p0iii) {
-		p0III = p0iii;
+		InitialParam.p0III = p0iii;
 	}
 
 	public void setPall(double pAll) {
-		this.pAll = pAll;
+		InitialParam.pAll = pAll;
 	}
 
 	public void setSourceP(double sourceP[]) {
@@ -130,11 +108,11 @@ public class InitialParam {
 	}
 
 	public void setSourceTemperature(double sourceTemperature) {
-		this.sourceTemperature = sourceTemperature;
+		InitialParam.sourceTemperature = sourceTemperature;
 	}
 
 	public void setVIII(double vIII) {
-		VIII = vIII;
+		InitialParam.VIII = vIII;
 	}
 
 }

@@ -19,8 +19,8 @@ public class GrowthGaNUsingGaHx {// \t
 
 		final VariableType varType = VariableType.linearScale;
 		final VariableParam varParam = VariableParam.sourceTemperature;
-		final double varRange1 = 1000.0;
-		final double varRange2 = 1200.0;
+		final double varRange1 = 500.0;
+		final double varRange2 = 1000.0;
 		final int stepNumber = 200;
 
 		int xLoopIndex;
